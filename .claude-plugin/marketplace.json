@@ -1,0 +1,27 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skills-no-where-to-be-found",
+  "description": "Agent skills that didn't exist anywhere else, so they got written here.",
+  "owner": {
+    "name": "Atiqur Rahman",
+    "email": "mrahma22@ncsu.edu"
+  },
+  "plugins": [
+    {
+      "name": "skills-no-where-to-be-found",
+      "displayName": "Skills No Where To Be Found",
+      "description": "A grab bag of agent skills for gaps in the existing ecosystem. Install once to get every skill in the collection.",
+      "author": {
+        "name": "Atiqur Rahman",
+        "email": "mrahma22@ncsu.edu"
+      },
+      "category": "development",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/example-skill"
+      ],
+      "homepage": "https://github.com/atiqur-rahman-0041/skills-no-where-to-be-found"
+    }
+  ]
+}

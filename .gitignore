@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/shell-snapshots/
+
+# Build and scratch output
+dist/
+build/
+*.log
+tmp/
