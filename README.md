@@ -2,11 +2,6 @@
 
 Agent skills I went looking for, couldn't find anywhere, and ended up writing.
 
-Every skill here exists because the gap was real: nothing in the built-ins,
-nothing in [anthropics/skills](https://github.com/anthropics/skills), nothing in
-the official marketplace. If a good version shows up upstream, the one here
-should go away.
-
 The repo is packaged as a Claude Code plugin marketplace, so the whole
 collection installs with two commands — but each skill is a plain directory with
 a `SKILL.md`, so you can also just copy the one you want.
@@ -27,10 +22,38 @@ To update later:
 /plugin marketplace update skills-no-where-to-be-found
 ```
 
-### Just one skill
+### Without the plugin system, with `npx`
 
-Skills are portable files, not a framework. Copy one into your personal skills
-directory and it works the same way:
+Skills are portable directories, not a framework. The
+[`skills`](https://github.com/vercel-labs/skills) CLI installs one straight out
+of this repo — no clone, nothing installed globally:
+
+```bash
+npx skills add atiqur-rahman-0041/skills-no-where-to-be-found --skill <skill-name>
+```
+
+For example, for the one skill in here today:
+
+```bash
+npx skills add atiqur-rahman-0041/skills-no-where-to-be-found --skill find-grey-literature
+```
+
+That puts the skill in `.agents/skills/` in the current project, symlinks it
+into `.claude/skills/` and the equivalent directory for every other agent it
+detects, and records the source and a content hash in `skills-lock.json`.
+
+Add `-g` to install into your user-level skills directory instead of the
+project, or `--all` to take every skill in the repo:
+
+```bash
+npx skills add atiqur-rahman-0041/skills-no-where-to-be-found --all -g
+```
+
+The full `https://github.com/...` URL works in place of the `owner/repo`
+shorthand. `npx skills list` shows what is installed, and `npx skills update`
+pulls later changes.
+
+The `git` equivalent, if you would rather not reach for `npx`:
 
 ```bash
 git clone https://github.com/atiqur-rahman-0041/skills-no-where-to-be-found.git
