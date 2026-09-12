@@ -34,10 +34,16 @@ adding a near-duplicate here.
 
 ## Style
 
-- Descriptions are written in the third person and state both *what* and *when*.
+- The `description` is the only part of a skill that is always in context, so it
+  is the only thing deciding whether the skill loads. Write it for that job: say
+  what the skill does, then when to use it; name the concrete nouns and verbs a
+  user would actually type, since those are the match surface; state what it is
+  *not* for when the topic is crowded, so it stays quiet during unrelated work.
+  One or two sentences, third person.
 - Bodies are procedures, not essays. Common path first.
-- Anything over ~500 lines should be split into reference files the `SKILL.md`
-  links to.
+- Anything over ~500 lines should be split out of `SKILL.md`. Supporting files
+  go in `references/` (material the agent reads: prompts, templates, schemas),
+  `scripts/` (executable code), or `assets/` (files copied into output).
 - Skills must not require secrets to be committed. Read credentials from the
   environment and say so in the skill body.
 

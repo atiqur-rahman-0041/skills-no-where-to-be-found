@@ -19,7 +19,7 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/example-skill"
+        "./skills/find-grey-literature"
       ],
       "homepage": "https://github.com/atiqur-rahman-0041/skills-no-where-to-be-found"
     }

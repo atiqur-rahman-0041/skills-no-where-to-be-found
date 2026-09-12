@@ -24,6 +24,7 @@ Do not use this for: the adjacent thing people confuse it with.
 
 Gotchas, failure modes, and anything that will surprise someone the first time.
 
-Long reference material — schemas, tables, full API surfaces — belongs in a
-sibling file (`reference.md`, `scripts/`, `assets/`) that you link from here,
-so it loads only when it is actually needed.
+Long reference material — schemas, tables, prompts, output templates — belongs
+in `references/` and is linked from here, so it loads only when it is actually
+needed. Executable code goes in `scripts/`, files copied into output in
+`assets/`.

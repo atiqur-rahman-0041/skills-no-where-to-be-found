@@ -45,7 +45,7 @@ repo.
 
 | Skill | What it does |
 | --- | --- |
-| [example-skill](skills/example-skill/SKILL.md) | Placeholder describing this repo's own conventions. Deleted as soon as a real skill lands. |
+| [find-grey-literature](skills/find-grey-literature/SKILL.md) | Surveys practitioner blogs and industry writing on a topic, verifies every result with an independent agent, and writes a Markdown report of links, titles, and summaries. |
 
 ## Layout
 
