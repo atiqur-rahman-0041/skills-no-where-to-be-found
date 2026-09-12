@@ -29,10 +29,9 @@ know up front — a thin area, a dominant source, a notable gap.]
 
 ### 1. [Title]
 
-- **Link:** [canonical original url — always the citation, never the mirror]
+- **Link:** [canonical original url]
 - **Source:** [site] · [type]
 - **Published:** [YYYY-MM-DD]
-- **Read via:** [mirror url — only for Medium member-only posts; omit otherwise]
 
 [2–4 sentence summary: what it covers, what is new or useful in it, who it is
 for. Verified against the fetched page.]

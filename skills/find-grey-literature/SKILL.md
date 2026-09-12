@@ -115,41 +115,27 @@ and backfilling from a pool beats re-searching.
 
 Drop immediately, before verification: pure marketing pages with no substance,
 link roundups with no original content, and anything outside the window.
-Paywalled pages are handled below rather than dropped on sight.
+Paywalled pages are dropped as well — see below.
 
-### 4a. Paywalled Medium posts
+### 4a. Paywalled pages
 
-Medium is a real venue for practitioner writing, and member-only posts cut off
-after the first lines. When a candidate is a member-only Medium post, retry the
-fetch through the Freedium mirror:
+A page you cannot read in full is not a page you can summarize. Paywalled
+candidates are dropped here, not worked around.
 
-```
-https://freedium-mirror.cfd/<full original URL, including https://>
-```
+The tells: a "Member-only story" banner, a subscribe or register wall over the
+body, an article that cuts off a few paragraphs in, or a metered "you have N
+free articles left" notice.
 
-The original URL is appended whole, not encoded — e.g.
-`https://freedium-mirror.cfd/https://medium.com/@author/some-post-abc123`.
+- **Drop the candidate** and record it in the exclusion table as
+  `paywalled-unreadable`.
+- **Never** summarize a paywalled post from its preview, its title, its
+  metadata, or prior knowledge of it.
+- **Do not** route it through a mirror, a reader proxy, a cache, an archive
+  snapshot, or any other paywall bypass. If the publisher gated the text, the
+  post is out of scope for the report.
 
-This applies to Medium-hosted publications on their own domains too, not just
-`medium.com` — a "Member-only story" banner or a Medium footer is the tell.
-
-Then:
-
-- **Article text comes back** — summarize from it and mark the item as
-  paywalled at source.
-- **A page shell with no article body** — the mirror renders client-side, so a
-  plain fetch can return an empty frame. Treat this as a failed read, not as an
-  empty article. Do not summarize a shell.
-- **Mirror is down, errors, or has no copy** — drop the candidate and record it
-  as paywalled-unreadable. Never summarize a paywalled post from its preview,
-  its title, or prior knowledge of it.
-
-In the report, **the canonical original URL is always the link.** The mirror is
-a reading aid, not the citation. Add the mirror URL on a separate `Read via`
-line so the reader can get to the text.
-
-Only Medium is in scope here. The mirror advertises other publishers; do not
-route general news paywalls through it.
+Backfill from the candidate pool instead — this is why step 4 collects more
+candidates than the item limit.
 
 ### 5. Draft summaries
 
@@ -169,7 +155,7 @@ A verifier returns, per item: `PASS`, `FAIL`, or `FLAG` with a reason. Then:
 
 - **PASS** — include it.
 - **FAIL** — drop it. Record it in the report's exclusion table with the reason.
-- **FLAG** (summary overstates, date uncertain, partial paywall) — correct the
+- **FLAG** (summary overstates, date uncertain, content thin) — correct the
   summary from the verifier's notes and include it, or drop it. Never ship a
   flagged summary unchanged.
 

@@ -21,18 +21,16 @@ For EACH item below, in this exact order:
 
 1. Fetch the URL with `WebFetch`. Do not skip this. Do not answer from prior
    knowledge of the site or the post.
-   - If it is a member-only Medium post and the text cuts off, refetch through
-     `https://freedium-mirror.cfd/<full original URL>` and verify against that.
-     Judge the ORIGINAL URL for the resolve and title checks; use the mirror only
-     to read the body. If the mirror returns a page shell with no article text,
-     that is a failed read — report it, do not treat it as an empty article.
+   - If the page is paywalled — a member-only banner, a subscribe or register
+     wall, or a body that cuts off partway — report it as paywalled-unreadable.
+     Do not route it through a mirror, reader proxy, cache, or archive snapshot
+     to get at the text, and do not verify it from the visible preview.
 2. Before looking at the draft summary, write your own one-sentence gist of what
    the page actually covers.
 3. Then compare the page against the claims, and check each of these:
    - **Resolves** — the URL loads and returns a real article. A 404, a redirect
-     to a homepage or index, or a parked domain is a failure. A Medium
-     member-only wall is not a failure by itself if the mirror yields the text;
-     any other login wall is.
+     to a homepage or index, a parked domain, a login wall, or a paywall is a
+     failure.
    - **Title** — the page title matches the claimed title. Minor punctuation or
      case differences are fine; a different article is not.
    - **Relevance** — the page is genuinely about the topic, not a passing
@@ -58,7 +56,7 @@ RELEVANCE: on-topic | tangential | off-topic
 DATE: <date found on page, or "not discoverable"> — in window | out of window | unknown
 SUMMARY: accurate | overstated | inaccurate — <what specifically is unsupported>
 SUBSTANCE: substantive | thin — <detail>
-ACCESS: open | medium-paywalled (read via mirror) | paywalled-unreadable
+ACCESS: open | paywalled-unreadable
 VERDICT: PASS | FAIL | FLAG
 REASON: <one line; required for FAIL and FLAG>
 CORRECTED SUMMARY: <2-4 sentences; only when VERDICT is FLAG>
@@ -68,10 +66,10 @@ Verdict rules:
 
 - **FAIL** if it does not resolve, the title is a mismatch, it is off-topic, it
   is out of window, the summary is inaccurate rather than merely overstated, or
-  it is paywalled and you could not read the body through the mirror.
-- **FLAG** if it is real and on-topic but the summary overstates it, the date is
-  not discoverable, the page is partially paywalled, or the content is thin. Give
-  a corrected summary.
+  it is paywalled.
+- **FLAG** if it is real, readable and on-topic but the summary overstates it,
+  the date is not discoverable, or the content is thin. Give a corrected
+  summary.
 - **PASS** only when every check above is clean.
 
 Do not soften a verdict because an item looks useful. Do not invent a date or a
